@@ -20,6 +20,9 @@ class Utils ():
     def get_metrics(self, model, X_train, X_test, y_train, Ytest):
         return get_metrics(model, X_train, X_test, y_train, Ytest)
     
+    def get_kernel_metrics(self, model, X_train, X_test, y_train, Ytest):
+        return get_kernel_metrics(model, X_train, X_test, y_train, Ytest)
+    
     def get_means_and_ic(self, f1, gmean, eficiencia_train, eficiencia_test):
         return get_means_and_ic(f1=f1, gmean=gmean, eficiencia_train=eficiencia_train, eficiencia_test=eficiencia_test)
 
@@ -48,6 +51,15 @@ def get_training_test(X, Y, train, test):
 def get_metrics(model, X_train, X_test, y_train, Ytest):
     Yest = model.predict(X_test)
     Ytrain_pred = model.predict(X_train)
+    f1_score_current = f1_score(y_true = Ytest, y_pred=Yest, average = "weighted")
+    gmean_current = geometric_mean_score(y_true = Ytest, y_pred=Yest, average="weighted")
+    eficiencia_train_current = np.mean(Ytrain_pred.ravel() == y_train.ravel())
+    eficiencia_test_current = np.mean(Yest.ravel() == Ytest.ravel())
+    return f1_score_current, gmean_current, eficiencia_train_current, eficiencia_test_current
+
+def get_kernel_metrics(model, X_train, X_test, y_train, Ytest):
+    Yest = model.score_samples(X_test)
+    Ytrain_pred = model.score_samples(X_train)
     f1_score_current = f1_score(y_true = Ytest, y_pred=Yest, average = "weighted")
     gmean_current = geometric_mean_score(y_true = Ytest, y_pred=Yest, average="weighted")
     eficiencia_train_current = np.mean(Ytrain_pred.ravel() == y_train.ravel())
