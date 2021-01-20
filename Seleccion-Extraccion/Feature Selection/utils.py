@@ -36,7 +36,7 @@ def read_csv():
 def get_matrixes():
     df = read_csv()
     data = df.to_numpy()
-    X = data[:,0:22]
+    X = data[:,0:23]
     Y = data[:,23]
     return X, Y
 
