@@ -4,15 +4,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import f1_score
 from imblearn.metrics import geometric_mean_score
 
-class Utils ():
+class Utils2 ():
     def __init__(self):
             pass
             
-    def get_matrixes(self):
-        return get_matrixes()
+    def get_matrixes(self, route):
+        return get_matrixes(route)
     
-    def get_train_test(self):
-        return get_train_text()
+    def get_train_test(self, route):
+        return get_train_text(route)
     
     def get_training_test(self, X, Y, train, test):
         return get_training_test(X, Y, train, test)
@@ -26,18 +26,18 @@ class Utils ():
     def get_means_and_ic(self, f1, gmean, eficiencia_train, eficiencia_test):
         return get_means_and_ic(f1=f1, gmean=gmean, eficiencia_train=eficiencia_train, eficiencia_test=eficiencia_test)
 
-def read_csv():
-    return pd.read_csv('../data/CTGsmt.csv', header=None)
+def read_csv(route):
+    return pd.read_csv(route, header=None)
 
-def get_matrixes():
-    df = read_csv()
+def get_matrixes(route):
+    df = read_csv(route)
     data = df.to_numpy()
-    X = data[:,0:23]
-    Y = data[:,23]
+    X = data[:,0:20]
+    Y = data[:,20]
     return X, Y
 
-def get_train_text():
-    X, Y = get_matrixes()
+def get_train_text(route):
+    X, Y = get_matrixes(route)
     X_train, X_test, y_train, y_test = train_test_split(X, Y, random_state=0, stratify=Y, shuffle=True, test_size = 0.25)
     return X_train, X_test, y_train, y_test
 
