@@ -1,32 +1,40 @@
-Proyecto final Modelos de sistemas 2 
+# Proyecto final Modelos de sistemas 2 
 
 Integrantes:
+  
     Wildey Alejandro Gallego Durango CC: 1035233399
     Juan Felipe Gallo Rendón CC: 1214724863
 
-Metodología de machine learning aplicada a la base de datos CTG:https://archive.ics.uci.edu/ml/datasets/Cardiotocography
+## Installation
 
 Proyecto hecho en Jupyter Python 3.
 
+```bash
 Dependencias:
-    - pandas: pip install pandas
-    - numpy: pip install numpy
-    - seaborn: pip install seaborn
-    - sklearn: pip install sklearn
-    - imblearn: pip install imblearn
-    - plotly: pip install plotly
-    - matplotlib: pip install matplotlib
-    - __future__: pip install __future__
-    - scipy: pip install scipy
-    - qgrid: pip install qgrid
-    - IPython: pip install IPython
-    - mlxtend: pip install mlxtend
-    - time: pip install time
+- pandas: pip install pandas
+- numpy: pip install numpy
+- seaborn: pip install seaborn
+- sklearn: pip install sklearn
+- imblearn: pip install imblearn
+- plotly: pip install plotly
+- matplotlib: pip install matplotlib
+- __future__: pip install __future__
+- scipy: pip install scipy
+- qgrid: pip install qgrid
+- IPython: pip install IPython
+- mlxtend: pip install mlxtend
+- time: pip install time
+```
 
-Ejecutar los algoritmos en el órden pedido por la guía de trabajo que se encuentra dentro del proyecto: 
+## Usage
 
-Arquitectura: 
-    ml_CTG: 
+```python
+Ejecutar los algoritmos en el órden pedido por la guía de trabajo que se encuentra dentro del proyecto
+```
+
+## Arquitectura
+```
+ml_CTG: 
         Entrega Final Proyecto -2020-I .pdf
         data:
             -- bases de datos y archivos guardados para procesamiento --
@@ -58,4 +66,5 @@ Arquitectura:
                 2. ANN FwrdSln.ipynb
                 3. SVM FwrdSln.ipynb
             3. PCA.ipynb
-
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
